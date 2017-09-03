@@ -1,0 +1,23 @@
+{
+  "name": "normalizr-entities",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "goodmind <andwebar@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodmind/normalizr-entities.git"
+  },
+  "keywords": [
+    "normalizr",
+    "entities"
+  ],
+  "bugs": {
+    "url": "https://github.com/goodmind/normalizr-entities/issues"
+  },
+  "homepage": "https://github.com/goodmind/normalizr-entities#readme",
+  "description": ""
+}
