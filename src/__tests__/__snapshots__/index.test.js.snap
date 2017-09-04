@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gets multiple entities 1`] = `
+Object {
+  "cats": Array [
+    "456",
+  ],
+  "person": Array [
+    "123",
+  ],
+}
+`;
+
+exports[`gets multiple entities 2`] = `
+Array [
+  Array [
+    Object {
+      "id": "123",
+      "type": "cats",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "id": "123",
+          "type": "cats",
+        },
+        Object {
+          "id": "123",
+          "type": "people",
+        },
+        Object {
+          "id": "789",
+          "name": "fido",
+        },
+        Object {
+          "id": "456",
+          "type": "cats",
+        },
+      ],
+    },
+    "data",
+  ],
+  Array [
+    Object {
+      "id": "123",
+      "type": "cats",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "id": "123",
+          "type": "cats",
+        },
+        Object {
+          "id": "123",
+          "type": "people",
+        },
+        Object {
+          "id": "789",
+          "name": "fido",
+        },
+        Object {
+          "id": "456",
+          "type": "cats",
+        },
+      ],
+    },
+    "data",
+  ],
+  Array [
+    Object {
+      "id": "123",
+      "type": "people",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "id": "123",
+          "type": "cats",
+        },
+        Object {
+          "id": "123",
+          "type": "people",
+        },
+        Object {
+          "id": "789",
+          "name": "fido",
+        },
+        Object {
+          "id": "456",
+          "type": "cats",
+        },
+      ],
+    },
+    "data",
+  ],
+  Array [
+    Object {
+      "id": "123",
+      "type": "people",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "id": "123",
+          "type": "cats",
+        },
+        Object {
+          "id": "123",
+          "type": "people",
+        },
+        Object {
+          "id": "789",
+          "name": "fido",
+        },
+        Object {
+          "id": "456",
+          "type": "cats",
+        },
+      ],
+    },
+    "data",
+  ],
+  Array [
+    Object {
+      "id": "789",
+      "name": "fido",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "id": "123",
+          "type": "cats",
+        },
+        Object {
+          "id": "123",
+          "type": "people",
+        },
+        Object {
+          "id": "789",
+          "name": "fido",
+        },
+        Object {
+          "id": "456",
+          "type": "cats",
+        },
+      ],
+    },
+    "data",
+  ],
+  Array [
+    Object {
+      "id": "456",
+      "type": "cats",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "id": "123",
+          "type": "cats",
+        },
+        Object {
+          "id": "123",
+          "type": "people",
+        },
+        Object {
+          "id": "789",
+          "name": "fido",
+        },
+        Object {
+          "id": "456",
+          "type": "cats",
+        },
+      ],
+    },
+    "data",
+  ],
+  Array [
+    Object {
+      "id": "456",
+      "type": "cats",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "id": "123",
+          "type": "cats",
+        },
+        Object {
+          "id": "123",
+          "type": "people",
+        },
+        Object {
+          "id": "789",
+          "name": "fido",
+        },
+        Object {
+          "id": "456",
+          "type": "cats",
+        },
+      ],
+    },
+    "data",
+  ],
+]
+`;
+
+exports[`gets nested entities 1`] = `
+Object {
+  "articles": Array [
+    123,
+  ],
+  "comments": Array [
+    "comment-123-4738",
+  ],
+  "users": Array [
+    10293,
+  ],
+}
+`;
