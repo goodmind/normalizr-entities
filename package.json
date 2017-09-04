@@ -9,7 +9,9 @@
     "flow": "flow"
   },
   "jest": {
-    "roots": ["<rootDir>/src"]
+    "roots": [
+      "<rootDir>/src"
+    ]
   },
   "author": "goodmind <andwebar@gmail.com>",
   "license": "MIT",
@@ -29,10 +31,14 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.6.0",
+    "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-flowtype": "^2.35.1",
+    "eslint-plugin-jest": "^21.0.0",
+    "eslint-plugin-promise": "^3.5.0",
     "flow-bin": "^0.54.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
