@@ -23,6 +23,11 @@
     "normalizr",
     "entities"
   ],
+  "files": [
+    "index.d.ts",
+    "lib",
+    "src"
+  ],
   "bugs": {
     "url": "https://github.com/goodmind/normalizr-entities/issues"
   },
