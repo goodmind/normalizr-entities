@@ -2,24 +2,16 @@
 
 import { type Schema } from 'normalizr'
 import EntitySchema from 'normalizr/dist/src/schemas/Entity'
-import ArraySchema, * as ArrayUtils from 'normalizr/dist/src/schemas/Array'
-import ObjectSchema, * as ObjectUtils from 'normalizr/dist/src/schemas/Object'
 import * as ImmutableUtils from 'normalizr/dist/src/schemas/ImmutableUtils'
 
-function unvisitKeys(input, schema, unvisit) {
-  for (const [key, value] of Object.entries(schema.schema)) {
-    unvisit(input[key], schema.schema[key])
-  }
-}
-
 const getUnvisit = (acc = {}, entities) => {
-  const getEntity = getEntities(entities);
+  const getEntity = getEntities(entities)
 
   function unvisit(input, schema) {
     if (schema instanceof EntitySchema) {
-      const entity = getEntity(input, schema);
+      const entity = getEntity(input, schema)
       acc[schema.key] = [schema.getId(entity) || input]
-      const entityCopy = ImmutableUtils.isImmutable(entity) ? entity : Object.assign({}, entity);
+      const entityCopy = ImmutableUtils.isImmutable(entity) ? entity : { ...entity }
       schema.denormalize(entityCopy, unvisit)
     } else if (typeof schema.denormalize === 'function') {
       schema.denormalize(input, unvisit)
@@ -54,7 +46,7 @@ function selectEntities(input: any, schema: Schema, entities: any) {
     return input
   }
 
-  return getUnvisit({}, entities)(input, schema);
+  return getUnvisit({}, entities)(input, schema)
 }
 
 export default selectEntities
