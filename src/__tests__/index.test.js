@@ -4,16 +4,16 @@ import { normalize, schema } from 'normalizr'
 it('gets nested entities', () => {
   const entitySettings = {
     idAttribute: (v) => +v.id,
-  };
-  const user = new schema.Entity('users', {}, entitySettings);
+  }
+  const user = new schema.Entity('users', {}, entitySettings)
   const comment = new schema.Entity('comments', {
     user: user
-  });
+  })
   const article = new schema.Entity('articles', {
     author: user,
     comments: new schema.Array(comment)
-  }, entitySettings);
-  const articles = new schema.Array(article);
+  }, entitySettings)
+  const articles = new schema.Array(article)
 
   const input = [{
     id: '123',
@@ -51,20 +51,20 @@ it('gets nested entities', () => {
         }
       }
     ]
-  }];
+  }]
   
-  const data = normalize(input, articles);
-  expect(selectEntities(data.entities.articles[123], article, data.entities)).toMatchSnapshot();
+  const data = normalize(input, articles)
+  expect(selectEntities(data.entities.articles[123], article, data.entities)).toMatchSnapshot()
 })
 
 it('gets multiple entities', () => {
-  const inferSchemaFn = jest.fn((input, parent, key) => input.type || 'dogs');
-  const catSchema = new schema.Entity('cats');
-  const peopleSchema = new schema.Entity('person');
+  const inferSchemaFn = jest.fn(input => input.type || 'dogs')
+  const catSchema = new schema.Entity('cats')
+  const peopleSchema = new schema.Entity('person')
   const listSchema = new schema.Array({
     cats: catSchema,
     people: peopleSchema
-  }, inferSchemaFn);
+  }, inferSchemaFn)
   const wrapped = new schema.Object({ data: listSchema })
 
   const data = normalize({ data: [
@@ -72,8 +72,8 @@ it('gets multiple entities', () => {
     { type: 'people', id: '123' },
     { id: '789', name: 'fido' },
     { type: 'cats', id: '456' }
-  ]}, wrapped);
+  ]}, wrapped)
 
-  expect(selectEntities(data.result, wrapped, data.entities)).toMatchSnapshot();
-  expect(inferSchemaFn.mock.calls).toMatchSnapshot();
-});
+  expect(selectEntities(data.result, wrapped, data.entities)).toMatchSnapshot()
+  expect(inferSchemaFn.mock.calls).toMatchSnapshot()
+})
