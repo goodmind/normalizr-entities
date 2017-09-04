@@ -1,9 +1,15 @@
 {
   "name": "normalizr-entities",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "typings": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src/ -d lib -s --ignore __tests__",
+    "test": "jest",
+    "flow": "flow"
+  },
+  "jest": {
+    "roots": ["<rootDir>/src"]
   },
   "author": "goodmind <andwebar@gmail.com>",
   "license": "MIT",
@@ -19,5 +25,21 @@
     "url": "https://github.com/goodmind/normalizr-entities/issues"
   },
   "homepage": "https://github.com/goodmind/normalizr-entities#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.6.0",
+    "eslint-plugin-flowtype": "^2.35.1",
+    "flow-bin": "^0.54.0",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
+    "normalizr": "^3.2.3"
+  },
+  "peerDependencies": {
+    "normalizr": "^3.2.3"
+  },
+  "dependencies": {}
 }
