@@ -77,3 +77,17 @@ it('gets multiple entities', () => {
   expect(selectEntities(data.result, wrapped, data.entities)).toMatchSnapshot()
   expect(inferSchemaFn.mock.calls).toMatchSnapshot()
 })
+
+it('works with falsy values', () => {
+  const photoSize = new schema.Entity('photoSizes')
+  const photoCachedSize = photoSize
+  const thumb = new schema.Union({
+    photoSize,
+    photoCachedSize
+  }, '_')
+  const media = new schema.Entity('media', {
+    thumb
+  })
+
+  expect(selectEntities({ thumb: undefined }, media, {})).toMatchSnapshot()
+})

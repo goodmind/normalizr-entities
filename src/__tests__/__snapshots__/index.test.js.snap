@@ -218,3 +218,13 @@ Object {
   ],
 }
 `;
+
+exports[`works with falsy values 1`] = `
+Object {
+  "media": Array [
+    Object {
+      "thumb": undefined,
+    },
+  ],
+}
+`;

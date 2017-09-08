@@ -8,6 +8,10 @@ const getUnvisit = (acc = {}, entities) => {
   const getEntity = getEntities(entities)
 
   function unvisit(input, schema) {
+    if (input === undefined || input === null) {
+      return acc
+    }
+
     if (schema instanceof EntitySchema) {
       const entity = getEntity(input, schema)
       acc[schema.key] = [schema.getId(entity) || input]
