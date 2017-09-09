@@ -4,6 +4,7 @@
   "main": "lib/index.js",
   "typings": "index.d.ts",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "babel src/ -d lib -s --ignore __tests__",
     "test": "jest",
     "flow": "flow"
