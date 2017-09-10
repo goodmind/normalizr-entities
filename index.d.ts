@@ -1,4 +1,5 @@
 // TODO: better types
-function selectEntities<T>(input: any, schema: Schema, entities: T): { [P in keyof T]: (string | number)[] }
+import { Schema } from 'normalizr'
+declare function selectEntities<T, K extends string | number>(input: any, schema: Schema, entities: T): { [P in keyof T]: K[] }
 
 export default selectEntities
