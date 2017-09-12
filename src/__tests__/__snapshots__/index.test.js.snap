@@ -3,6 +3,7 @@
 exports[`gets multiple entities 1`] = `
 Object {
   "cats": Array [
+    "123",
     "456",
   ],
   "person": Array [
@@ -214,6 +215,7 @@ Object {
     "comment-123-4738",
   ],
   "users": Array [
+    8472,
     10293,
   ],
 }

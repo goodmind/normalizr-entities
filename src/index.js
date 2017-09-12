@@ -14,7 +14,10 @@ const getUnvisit = (acc = {}, entities) => {
 
     if (schema instanceof EntitySchema) {
       const entity = getEntity(input, schema)
-      acc[schema.key] = [schema.getId(entity) || input]
+      const id = schema.getId(entity) || input
+      if (!acc[schema.key]) { acc[schema.key] = [id] } else {
+        acc[schema.key].push(id)
+      }
       const entityCopy = ImmutableUtils.isImmutable(entity) ? entity : { ...entity }
       schema.denormalize(entityCopy, unvisit)
     } else if (typeof schema.denormalize === 'function') {
